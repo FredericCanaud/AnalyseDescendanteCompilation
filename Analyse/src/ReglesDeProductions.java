@@ -2,7 +2,6 @@ import java.util.*;
 
 public class ReglesDeProductions {
 
-    static String regleDeDepart = "Programme";
     static LinkedHashMap<String, ArrayList<ArrayList<String>>> regles = new LinkedHashMap<>();
     static{
 
@@ -74,7 +73,8 @@ public class ReglesDeProductions {
         regles.get("<operateur>").add(new ArrayList<>());
         regles.get("<operateur>").get(2).add(("="));
     }
-    public void getReglesDeProduction(){
+
+    public void printReglesDeProduction(){
 
         System.out.println("Les règles de production sont :");
         for (Map.Entry<String, ArrayList<ArrayList<String>>> entry : regles.entrySet()) {
@@ -89,5 +89,17 @@ public class ReglesDeProductions {
             }
             System.out.print("\n");
         }
+    }
+
+    public boolean estTerminal(String symbole) {
+        return !regles.containsKey(symbole);
+    }
+
+    public String getRegleDeDepart() {
+        return "<Programme>";
+    }
+
+    public LinkedHashMap<String, ArrayList<ArrayList<String>>> getRegles() {
+        return regles;
     }
 }
