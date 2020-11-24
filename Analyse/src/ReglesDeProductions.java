@@ -2,10 +2,6 @@ import java.util.*;
 
 public class ReglesDeProductions {
 
-	// point de départ du programme
-    static String regleDeDepart = "Programme";
-    
-    // déclaration des règles de la grammaire
     static LinkedHashMap<String, ArrayList<ArrayList<String>>> regles = new LinkedHashMap<>();
     
     // initialisation des règles
@@ -98,5 +94,17 @@ public class ReglesDeProductions {
             }
             System.out.print("\n");
         }
+    }
+
+    public boolean estTerminal(String symbole) {
+        return !regles.containsKey(symbole);
+    }
+
+    public String getRegleDeDepart() {
+        return "<Programme>";
+    }
+
+    public LinkedHashMap<String, ArrayList<ArrayList<String>>> getRegles() {
+        return regles;
     }
 }
