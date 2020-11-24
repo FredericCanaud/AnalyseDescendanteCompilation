@@ -23,7 +23,7 @@
 hs_err_pid*
 /.metadata/
 
-
+/.sonarlint/
 Analyse/.settings/
 Analyse/bin/
 Analyse/.classpath

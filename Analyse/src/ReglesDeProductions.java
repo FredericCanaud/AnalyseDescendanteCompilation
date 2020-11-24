@@ -2,10 +2,16 @@ import java.util.*;
 
 public class ReglesDeProductions {
 
+	// point de départ du programme
     static String regleDeDepart = "Programme";
+    
+    // déclaration des règles de la grammaire
     static LinkedHashMap<String, ArrayList<ArrayList<String>>> regles = new LinkedHashMap<>();
+    
+    // initialisation des règles
     static{
 
+    	// <programmes> donne une liste 
         regles.put("<Programme>",new ArrayList<>());
         regles.get("<Programme>").add(new ArrayList<>());
         regles.get("<Programme>").get(0).add(("main(){"));
@@ -74,9 +80,12 @@ public class ReglesDeProductions {
         regles.get("<operateur>").add(new ArrayList<>());
         regles.get("<operateur>").get(2).add(("="));
     }
+    
+    // Affichage des règles de la grammaire
     public void getReglesDeProduction(){
-
         System.out.println("Les règles de production sont :");
+        
+        // pour chaque entrée de la liste de règle
         for (Map.Entry<String, ArrayList<ArrayList<String>>> entry : regles.entrySet()) {
             String key = entry.getKey();
             ArrayList<ArrayList<String>> value = entry.getValue();
