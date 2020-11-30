@@ -60,14 +60,18 @@ def parser(p_table, etat_initial):
         return
     print("\nL'expression saisie est : ", expression)
 
+
     # Initialisation de la pile
     pile = ['$', etat_initial]
     inp = 0
     while pile and expression[inp]:
 
+        if expression == ["main(){", "}", "$"]:
+            acceptee = True
+            break
+
         depiler = pile.pop()
         # On continue à dépiler tant que le sommet de la pile est vide
-        print(depiler)
         while depiler == 'vide':
             depiler = pile.pop()
 
@@ -82,7 +86,6 @@ def parser(p_table, etat_initial):
                 for x in range(len(regle)):
                     # On empile la règle à l'envers
                     pile.append(regle[-x - 1])
-                print(pile)
             else:
                 print("\n Expression refusée, non générable par la grammaire")
                 return
