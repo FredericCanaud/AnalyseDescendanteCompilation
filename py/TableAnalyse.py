@@ -67,6 +67,7 @@ def parser(p_table, etat_initial):
 
         depiler = pile.pop()
         # On continue à dépiler tant que le sommet de la pile est vide
+        print(depiler)
         while depiler == 'vide':
             depiler = pile.pop()
 
@@ -81,7 +82,7 @@ def parser(p_table, etat_initial):
                 for x in range(len(regle)):
                     # On empile la règle à l'envers
                     pile.append(regle[-x - 1])
-
+                print(pile)
             else:
                 print("\n Expression refusée, non générable par la grammaire")
                 return
@@ -106,7 +107,6 @@ if __name__ == "__main__":
     tableAnalyse, tableAnalyseAffichee = getTableAnalyse(deepcopy(premiers), deepcopy(suivants), regles)
     print_(tableAnalyseAffichee)
     parser(tableAnalyse, etat_initial)
-
-
+    
 
 
