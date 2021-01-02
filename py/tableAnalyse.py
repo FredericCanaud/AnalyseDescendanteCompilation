@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[154]:
-
 import ReglesProductions_Premier_Suivant
 from collections import defaultdict
 from copy import deepcopy
 
 
 def print_(tableAnalyse):
+    # Fonction s'occupant de l'affichage du résultat
+
     ReglesProductions_Premier_Suivant.afficherRegles(regles)
     ReglesProductions_Premier_Suivant.afficherPremiers(premiers)
     ReglesProductions_Premier_Suivant.afficherSuivants(suivants)
@@ -30,8 +30,10 @@ def print_(tableAnalyse):
 
 
 def getTableAnalyse(premiers, suivants, regles):
+    # Fonction récupérant la table d'analyse en données ainsi qu'en affichage
+
     tableAnalyse = defaultdict()
-    tableAnalyseAffichee = defaultdict()  # just for printing in good way (can be done by parsing_table too)
+    tableAnalyseAffichee = defaultdict()  # Pour l'affichage
     for nonTerminal, regle in regles.items():
         for production in regle:
             symbole = production[0]
@@ -56,16 +58,23 @@ def parser(p_table, etat_initial):
     expression = list(map(str, input("\nEntrez l'expression à analyser "
                                      "(Séparez chaque symbole par un espace et finissez par $)\n").split()))
     if expression[-1] != '$':
-        print("\nPlease add '$' at the end of expression. Try again")
+        print("\nVeuillez ajouter un '$' à la fin de votre expression.")
         return
+
     print("\nL'expression saisie est : ", expression)
 
+    for i in range(len(expression)):
+        if isinstance(expression[i], int):
+            expression[i] = "int"
+        if isinstance(expression[i], float):
+            expression[i] = "float"
 
     # Initialisation de la pile
     pile = ['$', etat_initial]
     inp = 0
     while pile and expression[inp]:
 
+        print(pile)
         if expression == ["main(){", "}", "$"]:
             acceptee = True
             break
@@ -110,6 +119,3 @@ if __name__ == "__main__":
     tableAnalyse, tableAnalyseAffichee = getTableAnalyse(deepcopy(premiers), deepcopy(suivants), regles)
     print_(tableAnalyseAffichee)
     parser(tableAnalyse, etat_initial)
-    
-
-

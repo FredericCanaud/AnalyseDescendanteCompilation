@@ -2,7 +2,7 @@
 # coding: utf-8
 
 def getRegles():
-    dic = {
+    regles = {
         "Programme": [["main(){", "liste_declarations", "liste_instructions", "}"]],
         "liste_declarations": [["une_declaration", "liste_declarations"], ["vide"]],
         "une_declaration": [["type", "id"]],
@@ -14,7 +14,7 @@ def getRegles():
         "condition": [["id", "operateur", "nombre"]],
         "operateur": [["<"], [">"], ["="]]
     }
-    return dic, "Programme"
+    return regles, "Programme"
 
 
 def afficherRegles(regles):
