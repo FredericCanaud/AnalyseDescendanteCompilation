@@ -24,7 +24,7 @@ hs_err_pid*
 /.metadata/
 
 /.sonarlint/
-Analyse/.settings/
-Analyse/bin/
-Analyse/.classpath
-Analyse/.project
+java/.settings/
+java/bin/
+java/.classpath
+java/.project
