@@ -1,5 +1,9 @@
 <h1 align="center"> Analyseur syntaxique descendant de grammaire LL(1) </h1> 
 
+<p align="center" width="100%">
+    <img width="66%" src="./analyseur.png" alt="Analyseur"> 
+</p>
+
 <p align="center"><strong> Réalisation d'un analyseur syntaxique pour une grammaire donnée</strong></p>
 
 >## Technologies utilisées
@@ -40,4 +44,4 @@ afin de nous assurer du caractère déterministe de l'analyseur à construire.
 >## Liens utiles
 
 >#### Rapport de notre projet > [ProjetCompilation.pdf](./ProjetCompilation.pdf) <br>
->#### Sujet du projet > [SujetProjetCompilation.pdf](./SujetProjetCompilation.pdf)
+>#### Sujet du panalyseurojet > [SujetProjetCompilation.pdf](./SujetProjetCompilation.pdf)
